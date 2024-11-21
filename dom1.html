@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cont{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 10px;
+        }
+        #cont>div{
+            text-align: center;
+            border: 1px solid black;
+          border-color:gray ;
+        }
+        select{
+            margin-top: 10%;
+            background-color: aqua;
+            margin-left: 50%;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <select onchange="submit()">
+        <option value="">sort on the age</option>
+        <option value="h2l">high to low</option>
+        <option value="l2h">low to high</option>
+    </select>
+    <div id="cont">
+    </div>
+   
+    </body>
+</html>
+<script>
+    const employees = [
+  { name: "Alice", age: 28, salary: 50000 },
+  { name: "Bob", age: 34, salary: 60000 },
+  { name: "Charlie", age: 25, salary: 45000 },
+  { name: "David", age: 40, salary: 70000 },
+  { name: "Eva", age: 30, salary: 55000 }
+];
+   function display(employees){
+    document.querySelector("div").innerHTML="";
+   employees.forEach(function (elem){
+   document.querySelector("div").innerHTML+=
+   `<div>
+            <h1>${elem.name}</h1>
+            <p>${elem.age}</p>
+            <p>${elem.salary}</p>
+        </div>`
+   })
+}
+  display(employees);
+   function submit(){
+   let sc=document.querySelector("select").value;
+   console.log(sc)
+   if(sc==="l2h"){
+    employees.sort((a,b)=>a.age-b.age);
+    display(employees);
+   }
+    else if(sc==="h2l"){
+        employees.sort((a,b)=>b.age-a.age);
+    display(employees);
+    }
+   }
+   
+</script>

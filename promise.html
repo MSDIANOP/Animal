@@ -1,0 +1,30 @@
+<script>
+function wash(time){
+    return  new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        resolve("clothes are wahed");
+    },time)
+})
+}
+function dried(time){
+    return new Promise((resolve, reject) => {
+    setTimeout( ()=>{
+        resolve("clothes are dried");
+    },time)
+})
+}
+
+async function getready(){
+    try{
+    let p1=await wash(2000);
+    console.log(p1);
+    let p2=await dried(2000);
+    console.log(p2);
+    }
+    catch(error)  
+    {
+   console.log(error);   
+    }
+}
+getready();
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter otp">
+    <button onclick="checkotp()">submit</button>
+    
+</body>
+</html>
+<script>
+ /* function washclothes(t,call){
+    setTimeout(function(){
+    console.log("clothes are washed");
+    call();
+   },t)
+}
+   function dryclothes(t,call){
+    setTimeout(function(){
+    console.log("clothes are dried");
+    call();
+   },t)
+}
+   function wrapclothes(t){
+    setTimeout(function(){
+    console.log("clothes are wrapped");
+   },t)
+}
+   washclothes(1000,function(){
+    dryclothes(2000,function(){
+        wrapclothes(1000)
+    });
+   }); */
+   
+
+     function checkotp(){
+        let otp=document.querySelector("input").value;
+       let x= document.createElement("h1");
+        document.body.appendChild(x);
+   let mypromise=new Promise(function(resolve,reject){
+      setTimeout(function(){
+    if(otp==1234){
+    resolve("Correct Otp");
+    }
+    else{}
+    reject("Incorrect otp");
+   },2000);
+});
+
+
+   mypromise.then(function(msg){
+      document.querySelector("h1").innerText=msg;
+   })
+   .catch(function(msg){
+      document.querySelector("h1").innerText=msg;
+   })
+     }
+   
+</script>

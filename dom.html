@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom sample</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="enter yourname">
+    <input type="email" placeholder="enter your email">
+    <select>
+     <option value="">Select </option>
+     <option value="male">Male</option>
+     <option value="female">Female</option>
+    </select>
+    <button onclick="submit()">Submit</button>
+</body>
+</html>
+<script>
+   function submit(){
+    let name=document.querySelector("input[type=text]").value;
+    console.log(name);
+    let email=document.querySelector("input[type=email]").value;
+    console.log(email);
+    let gender=document.querySelector("select").value;
+    console.log(gender)
+   }
+</script>

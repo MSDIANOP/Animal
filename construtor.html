@@ -1,0 +1,14 @@
+<script>
+    function createipohne(model,storage,color){
+    
+            this.model=model,
+            this.storage=storage,
+            this.color=color,
+            this.getinfo=function(){
+            console.log(`model is ${this.model} storage is ${this.storage} and color is ${this.color}`)
+            }
+        
+    }
+    let s1=new createipohne("ipone16",128,"black");
+    s1.getinfo();
+</script>
